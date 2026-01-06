@@ -56,7 +56,7 @@ Build a strong foundation in Linux by learning basic commands, filesystem naviga
 | Others | Everyone else |
 
 📌 Permission example:
-```bash
+
 -rwxr-xr--
 
 👥 User & Group Management
