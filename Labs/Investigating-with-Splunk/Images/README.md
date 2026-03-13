@@ -198,11 +198,3 @@ The investigation reveals:
 * Splunk
 * Windows Security Logs
 * SPL (Search Processing Language)
-
----
-
-# Author
-
-Cybersecurity student documenting practical labs while learning **Blue Team operations and SOC analysis**.
-
-Part of my **365 Days of Cybersecurity journey**.
