@@ -1,125 +1,109 @@
-# Investigating with Splunk
+# TryHackMe — Investigating with Splunk
+
+**Difficulty:** Easy
+**Category:** SIEM / Log Analysis
+**Platform:** TryHackMe
+
+---
 
 ## Objective
 
-This lab focuses on investigating security events using Splunk.  
-The goal is to analyze logs, perform searches, and identify suspicious activity within the dataset.
+This lab focuses on investigating security events using **Splunk**.
+The goal is to analyze logs, perform searches, and identify suspicious activity using SPL queries.
 
-Through this investigation we practice:
+Skills practiced:
 
-- Log analysis
-- Splunk Search Processing Language (SPL)
-- Identifying suspicious behavior
-- Event correlation
-
----
-
-# Lab Environment
-
-Tool used:
-
-- Splunk SIEM
-
-Main skills practiced:
-
-- Log investigation
-- Filtering events
-- Querying data using SPL
-- Threat detection
+* Log analysis
+* SPL queries
+* Event filtering
+* Security investigation
 
 ---
 
-# Task 1 – Exploring the Dataset
+## Task 1 — Exploring the Dataset
 
-First, we explore the available logs and understand the data structure within Splunk.
-
-This helps identify important fields that will be useful for filtering and investigation.
+We begin exploring the dataset available in Splunk to understand what logs are present and which fields will be useful during the investigation.
 
 ![Task 1](Images/task1.png)
 
 ---
 
-# Task 2 – Searching Events
+## Task 2 — Searching Events
 
-We perform initial searches to identify relevant logs and observe how events are structured.
-
-This step focuses on understanding the data before narrowing the investigation.
+Initial searches are performed to observe how events are structured in the logs.
 
 ![Task 2](Images/task2.jpg)
 
 ---
 
-# Task 3 – Filtering Events
+## Task 3 — Filtering Events
 
-Using filters, we begin reducing the number of results to focus on relevant activity.
-
-This allows us to identify potential indicators of compromise or abnormal patterns.
+Filtering events helps reduce noise and focus on relevant activity.
 
 ![Task 3](Images/task3.jpg)
 
 ---
 
-# Task 4 – Deduction
+## Task 4 — Deduction
 
-This step was solved through logical deduction based on previous results, so no screenshot was required.
+This task was solved through logical deduction using information obtained from previous queries, therefore no screenshot was necessary.
 
 ---
 
-# Task 5 – Investigating Suspicious Activity
+## Task 5 — Investigating Suspicious Activity
 
-We investigate events related to potentially suspicious actions and analyze the associated fields.
+We analyze suspicious events and inspect related fields to identify abnormal behavior.
 
 ![Task 5](Images/task5.jpg)
 
 ---
 
-# Task 6 – Event Correlation
+## Task 6 — Event Correlation
 
-At this stage, we correlate multiple events to understand the timeline of the activity.
-
-This helps determine what actions were performed and by whom.
+Multiple events are correlated to understand the sequence of activity.
 
 ![Task 6](Images/task6.jpg)
 
 ---
 
-# Task 7 – Deep Investigation
+## Task 7 — Deep Investigation
 
-We refine our search queries further to extract more specific information from the logs.
+Queries are refined to extract more specific information from the logs.
 
 ![Task 7](Images/task7.jpg)
 
 ---
 
-# Task 8 – Identifying Key Indicators
+## Task 8 — Identifying Indicators
 
-Here we identify important indicators that reveal malicious or unusual activity within the dataset.
+Important indicators are identified that reveal suspicious actions within the dataset.
 
 ![Task 8](Images/task8.jpg)
 
 ---
 
-# Task 9 – Confirming Findings
+## Task 9 — Confirming Findings
 
-The investigation confirms the suspicious behavior by analyzing the relevant events in more detail.
+The investigation confirms suspicious activity found during previous analysis.
 
 ![Task 9](Images/task9.jpg)
 
 ---
 
-# Task 10 – Final Result
+## Task 10 — Final Result
 
-Finally, we obtain the final result of the investigation and confirm the findings.
+The investigation concludes with the final result obtained from the Splunk queries.
 
 ![Task 10](Images/task10.jpg)
 
 ---
 
-# Skills Practiced
+## Skills Practiced
 
-- SIEM Investigation
-- Log Analysis
-- Splunk SPL Queries
-- Security Event Investigation
-- Threat Detection
+* SIEM Investigation
+* Log Analysis
+* Splunk SPL Queries
+* Threat Detection
+* Event Correlation
 
+---
