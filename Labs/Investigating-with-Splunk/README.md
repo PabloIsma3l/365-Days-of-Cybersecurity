@@ -45,7 +45,7 @@ We perform initial searches to identify relevant logs and observe how events are
 
 This step focuses on understanding the data before narrowing the investigation.
 
-![Task 2](Images/task2.png)
+![Task 2](Images/task2.jpg)
 
 ---
 
@@ -55,7 +55,7 @@ Using filters, we begin reducing the number of results to focus on relevant acti
 
 This allows us to identify potential indicators of compromise or abnormal patterns.
 
-![Task 3](Images/task3.png)
+![Task 3](Images/task3.jpg)
 
 ---
 
@@ -69,7 +69,7 @@ This step was solved through logical deduction based on previous results, so no 
 
 We investigate events related to potentially suspicious actions and analyze the associated fields.
 
-![Task 5](Images/task5.png)
+![Task 5](Images/task5.jpg)
 
 ---
 
@@ -79,7 +79,7 @@ At this stage, we correlate multiple events to understand the timeline of the ac
 
 This helps determine what actions were performed and by whom.
 
-![Task 6](Images/task6.png)
+![Task 6](Images/task6.jpg)
 
 ---
 
@@ -87,7 +87,7 @@ This helps determine what actions were performed and by whom.
 
 We refine our search queries further to extract more specific information from the logs.
 
-![Task 7](Images/task7.png)
+![Task 7](Images/task7.jpg)
 
 ---
 
@@ -95,7 +95,7 @@ We refine our search queries further to extract more specific information from t
 
 Here we identify important indicators that reveal malicious or unusual activity within the dataset.
 
-![Task 8](Images/task8.png)
+![Task 8](Images/task8.jpg)
 
 ---
 
@@ -103,7 +103,7 @@ Here we identify important indicators that reveal malicious or unusual activity 
 
 The investigation confirms the suspicious behavior by analyzing the relevant events in more detail.
 
-![Task 9](Images/task9.png)
+![Task 9](Images/task9.jpg)
 
 ---
 
@@ -111,7 +111,7 @@ The investigation confirms the suspicious behavior by analyzing the relevant eve
 
 Finally, we obtain the final result of the investigation and confirm the findings.
 
-![Task 10](Images/task10.png)
+![Task 10](Images/task10.jpg)
 
 ---
 
