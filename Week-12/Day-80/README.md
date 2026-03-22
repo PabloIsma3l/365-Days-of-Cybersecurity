@@ -1,19 +1,19 @@
-# 🛡️ Phishing Prevention — TryHackMe DAY 80
+# 🛡️ Phishing Prevention — TryHackMe (Completed) DAY 80 - 81
 
 ## 📌 Overview
 
-This document summarizes the **"Phishing Prevention"** room on TryHackMe.
+This document summarizes the completion of the **"Phishing Prevention"** room on TryHackMe.
 
-Phishing prevention focuses on implementing strategies, technologies, and user awareness to reduce the risk of phishing attacks. Since phishing is one of the most common initial access techniques, preventing it is critical for organizational security.
+Phishing prevention focuses on implementing **technical controls, user awareness, and security best practices** to reduce the risk of phishing attacks. Since phishing is one of the most common initial access techniques, preventing it is critical for organizational security.
 
 ---
 
-## 🎯 Learning Objectives
+## 🎯 Learning Objectives Achieved
 
-* Understand how to prevent phishing attacks
-* Learn defensive security controls
-* Recognize the importance of user awareness
-* Understand email security mechanisms
+✔ Understand how to prevent phishing attacks
+✔ Learn defensive security controls
+✔ Recognize the importance of user awareness
+✔ Understand email security mechanisms
 
 ---
 
@@ -55,27 +55,30 @@ Security solutions that:
 * Block suspicious attachments
 * Identify spam and phishing attempts
 
-Often implemented via:
+Common implementations:
 
 * Secure Email Gateways (SEG)
-* Cloud email security platforms
+* Cloud-based email security platforms
 
 ---
 
 ### 🔹 Endpoint Protection
 
-Tools like:
+Tools such as:
 
 * Antivirus
 * EDR (Endpoint Detection and Response)
 
-These help detect and stop malware delivered via phishing.
+Help detect and stop malware delivered via phishing emails.
 
 ---
 
 ### 🔹 Web Filtering
 
-Blocks access to known malicious websites and phishing domains.
+Blocks access to:
+
+* Known malicious domains
+* Phishing websites
 
 ---
 
@@ -83,53 +86,53 @@ Blocks access to known malicious websites and phishing domains.
 
 Users are often the weakest link in security.
 
-Key practices:
+Key practices include:
 
 * Security awareness training
 * Phishing simulations
-* Educating users on recognizing suspicious emails
+* Continuous user education
 
-Common advice:
+Basic recommendations:
 
-* Do not click unknown links
+* Avoid clicking unknown links
 * Verify sender identity
-* Avoid downloading unexpected attachments
+* Do not download unexpected attachments
 
 ---
 
 ## 🔐 Organizational Best Practices
 
-* Enforce **multi-factor authentication (MFA)**
-* Apply **least privilege access**
-* Regularly update and patch systems
-* Implement security policies
+* Enforce **Multi-Factor Authentication (MFA)**
+* Apply **Least Privilege Access**
+* Keep systems updated and patched
+* Implement strong security policies
 
 ---
 
 ## 🛡️ SOC Role in Phishing Prevention
 
-SOC teams help prevent phishing by:
+SOC teams contribute by:
 
 * Monitoring email threats
-* Blocking malicious domains
+* Blocking malicious domains and IPs
 * Responding to reported phishing emails
-* Improving detection rules
+* Improving detection rules and playbooks
 
 ---
 
-## 🏁 Progress Status
+## 🏁 Room Completion Status
 
-* ⏳ In progress (5%)
+* ✅ All tasks completed
 
 ---
 
 ## 🚀 Key Takeaways
 
 * Phishing prevention requires both technical and human controls
-* Email authentication protocols are essential
+* Email authentication protocols are essential for reducing spoofing
 * User awareness significantly reduces risk
 * Defense-in-depth is key to mitigating phishing attacks
 
 ---
 
-🚀 *This room focuses on defensive strategies that help organizations reduce the risk of phishing attacks and improve overall security posture.*
+🚀 *This room strengthens defensive security skills by focusing on prevention strategies that reduce phishing risks in real-world environments.*
