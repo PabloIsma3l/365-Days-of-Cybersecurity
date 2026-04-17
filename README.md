@@ -1,8 +1,8 @@
 # 🛡️ 365 Days of Cybersecurity
 
-A personal, hands-on journey through **365 days of cybersecurity learning**, focused on building strong fundamentals and progressing toward **Red Team / offensive security** skills.
+A personal, hands-on journey through **365 days of cybersecurity learning**, focused on building strong defensive skills and progressing toward a role as a **SOC Analyst (Blue Team)**.
 
-This repository documents my **daily learning**, practical exercises, labs, and reflections while following structured learning paths such as **TryHackMe**, self-study, and hands-on experimentation.
+This repository documents my **daily learning, practical labs, threat detection exercises, and investigations**, following structured learning paths such as **TryHackMe**, along with self-study and hands-on experimentation.
 
 ---
 
@@ -10,12 +10,12 @@ This repository documents my **daily learning**, practical exercises, labs, and 
 
 The main goals of this project are:
 
-* Build a **solid foundation in cybersecurity fundamentals**
-* Develop practical skills through **hands-on labs and tools**
-* Document learning progress in a **clear and professional way**
-* Create a public portfolio that reflects **consistency, discipline, and growth**
+* Build a **solid foundation in cybersecurity and defensive security**
+* Develop practical skills in **threat detection, log analysis, and incident investigation**
+* Document progress in a **clear, structured, and professional way**
+* Create a public portfolio that demonstrates **consistency, discipline, and real SOC skills**
 
-This is not about rushing content, but about **understanding, practicing, and documenting** each step.
+This project focuses on **understanding how attacks work and how to detect them**, not just theory.
 
 ---
 
@@ -24,17 +24,18 @@ This is not about rushing content, but about **understanding, practicing, and do
 The roadmap followed in this repository includes:
 
 * Networking fundamentals
-* Traffic analysis (Wireshark, tcpdump)
-* Network scanning and enumeration (Nmap)
-* Cryptography basics
-* Web, Linux, and offensive security fundamentals
-* Red Team and penetration testing paths (later stages)
+* Traffic analysis (**Wireshark, tcpdump**)
+* Log analysis (**Windows Event Logs, Sysmon**)
+* Web attack detection (SQLi, XSS, Web Shells, DDoS)
+* Threat detection on Windows systems
+* SIEM fundamentals and event correlation
+* Incident investigation mindset (SOC workflow)
 
-Most theoretical and practical content is aligned with:
+Most of the content is based on:
 
-* **TryHackMe – Cyber Security 101 & Offensive Paths**
+* **TryHackMe – SOC Level 1 Path**
 * Linux and networking self-study
-* Personal labs and experiments
+* Hands-on labs and real-world scenarios
 
 ---
 
@@ -52,26 +53,29 @@ Most theoretical and practical content is aligned with:
 │   └── README.md
 ├── labs/
 │   ├── nmap-basic-lab/
-│   └── crypto-basics/
+│   ├── web-attack-detection/
+│   └── windows-logging-analysis/
 └── README.md
 ```
 
-* Each **week** contains daily folders and a weekly summary
+* Each **week** contains daily progress and summaries
 * Each **day** includes a dedicated `README.md`
-* The `labs/` directory contains hands-on practice and experiments
+* The `labs/` directory includes **practical detection and analysis exercises**
 
 ---
 
 ## 🛠 Tools & Technologies
 
-Some of the tools and technologies used throughout this project:
+Tools and technologies used throughout this project:
 
-* Nmap
-* Wireshark
-* tcpdump
-* OpenSSL
-* Linux (Kali / Ubuntu)
-* Git & GitHub
+* **Wireshark** → Network traffic analysis
+* **tcpdump** → Packet capture and inspection
+* **Nmap** → Network scanning and enumeration
+* **Sysmon** → Advanced Windows logging
+* **Windows Event Viewer** → Log analysis
+* **SIEM (Splunk / ELK)** → Log correlation and detection
+* **Linux (Kali / Ubuntu)**
+* **Git & GitHub**
 
 More tools will be added as the project progresses.
 
@@ -79,30 +83,51 @@ More tools will be added as the project progresses.
 
 ## 🧪 Hands-on Practice
 
-Practical learning is a core part of this repository:
+Practical experience is a core part of this journey:
 
-* Local labs in controlled environments
-* TryHackMe rooms and paths
-* Network scanning and traffic analysis exercises
+* TryHackMe SOC and detection-focused rooms
+* Log analysis (Windows & web logs)
+* Detection of real-world attack patterns
+* Traffic analysis and investigation
 
-Each lab is documented with:
+Each lab includes:
 
 * Objectives
-* Commands used
-* Observations and takeaways
+* Logs / data analyzed
+* Commands and techniques used
+* Key findings and takeaways
 
 ---
 
 ## 📈 Progress Tracking
 
-* Learning is organized **day by day** and **week by week**
-* Weekly summaries highlight:
+* Learning is structured **day by day** and **week by week**
+* Weekly summaries include:
 
   * Topics covered
-  * Tools learned
+  * Detection techniques learned
+  * Tools used
   * Key takeaways
 
-This helps track progress over time and reinforce concepts.
+This helps reinforce knowledge and track continuous improvement.
+
+---
+
+## 🛡️ SOC Focus
+
+This repository emphasizes:
+
+* **Threat detection over exploitation**
+* **Event correlation instead of isolated logs**
+* **Understanding attacker behavior**
+* **Real-world investigation mindset**
+
+📌 Key areas developed:
+
+* Web attack detection
+* Windows threat detection (Event Logs + Sysmon)
+* DDoS and Web Shell detection
+* Log analysis and IoC identification
 
 ---
 
@@ -122,13 +147,12 @@ Any misuse of the information is strictly discouraged.
 ## 👤 Author
 
 **Pablo Ismael**
-Cybersecurity student | Aspiring Red Team Operator
+Cybersecurity Student | Aspiring SOC Analyst (Blue Team)
 
 ---
 
 ## 🚀 Final Note
 
-This repository represents **consistency over time**.
-The goal is not perfection, but continuous improvement — one day at a time.
+This project represents a commitment to **daily improvement, hands-on learning, and real-world skill development**.
 
-🔴 *Learn. Practice. Document. Repeat.*
+The goal is not only to learn cybersecurity, but to **become capable of detecting, analyzing, and responding to real threats in a SOC environment**.
