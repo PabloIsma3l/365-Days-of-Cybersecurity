@@ -1,59 +1,62 @@
 # 🧬 File and Hash Threat Intelligence — TryHackMe
 
-## 📅 Day 120 - 365 Days of Cybersecurity
+## 📅 Day 121 - 365 Days of Cybersecurity
 
-## 🚧 Progress: 50%
+## ✅ Status: Completed
 
 ---
 
 # 🧠 Overview
 
-In this room, I am learning how to perform **file-based threat intelligence and enrichment**, a core task in SOC operations.
+In this room, I learned how to perform **file-based threat intelligence analysis**, focusing on how SOC analysts investigate suspicious files using hashing, enrichment, and sandboxing.
 
-The focus is on transforming a **suspicious file or hash into actionable intelligence** using:
+The room simulates a real-world workflow where a suspicious file is:
 
-* Filepath and filename analysis
-* Hash generation (SHA256 / MD5)
-* Threat intelligence platforms (VirusTotal, MalwareBazaar)
-* Sandbox analysis
+* Identified
+* Hashed
+* Enriched with threat intelligence
+* Analyzed in sandbox environments
+* Correlated with known malicious behavior
 
 📌 Key Concept:
 
-SOC analysts don’t just see files — they **enrich them into intelligence to make decisions**. ([TryHackMe][1])
+A file alone is just an artifact —
+➡️ **Threat Intelligence transforms it into actionable insight.**
 
 ---
 
-# 🎯 Learning Objectives (So far)
+# 🎯 Learning Objectives
 
 * Identify suspicious files using heuristics
-* Generate and validate file hashes
+* Generate file hashes (MD5 / SHA256)
 * Enrich hashes using threat intelligence platforms
-* Analyze sandbox results
-* Map behavior to MITRE ATT&CK
+* Analyze sandbox behavior
+* Correlate findings with MITRE ATT&CK
+* Make investigation decisions based on evidence
 
 ---
 
-# 📂 Filepath & Filename Analysis
+# 📂 File Analysis (Initial Triage)
 
-Before hashing, analysts use **heuristics** to detect suspicious files.
+Before hashing, initial indicators can reveal suspicious behavior.
 
 ---
 
 ## 🔹 Suspicious File Locations
 
-Common attacker patterns:
+Common attacker-used directories:
 
-* `C:\Windows\Temp\` → temporary payloads
-* `C:\Users\Public\` → shared access / stealth
-* `C:\ProgramData\` → persistence
+* `C:\Windows\Temp\`
+* `C:\Users\Public\`
+* `C:\ProgramData\`
 
-📌 These locations are often abused to reduce visibility. ([TryHackMe][1])
+📌 Used for stealth, persistence, or execution.
 
 ---
 
 ## 🔹 Filename-Based Indicators
 
-### ⚠️ Common Techniques
+### Common attacker techniques:
 
 * Double extensions
   → `invoice.pdf.exe`
@@ -61,25 +64,25 @@ Common attacker patterns:
 * Masquerading
   → `svch0st.exe`
 
-* High entropy names
-  → `jh8F21.exe`
+* Randomized names
+  → `a8F3k2.exe`
 
 * Legitimate-looking names
-  → `backup-2024.exe`
+  → `update-service.exe`
 
-📌 Filenames alone don’t confirm malware — but they **signal investigation priority**. ([TryHackMe][1])
-
----
-
-# 🔐 File Hashing (Core Concept)
-
-Hash = **unique fingerprint of a file**
+📌 These are early warning signals — not proof of compromise.
 
 ---
 
-## 🔹 Why It Matters
+# 🔐 File Hashing
 
-* Identifies malware regardless of filename
+A hash acts as a **unique fingerprint of a file**.
+
+---
+
+## 🔹 Why Hashing Matters
+
+* Identifies files regardless of name
 * Enables threat intel lookup
 * Supports correlation across systems
 
@@ -87,7 +90,7 @@ Hash = **unique fingerprint of a file**
 
 ## 🔹 Common Algorithms
 
-* MD5
+* MD5 (fast but less secure)
 * SHA256 (preferred)
 
 ---
@@ -96,14 +99,14 @@ Hash = **unique fingerprint of a file**
 
 ### Windows
 
-```bash id="n2p8as"
+```bash id="k1r8mz"
 certutil -hashfile file.exe SHA256
 Get-FileHash file.exe
 ```
 
 ### Linux
 
-```bash id="o8f9ds"
+```bash id="o5d3pa"
 sha256sum file.exe
 ```
 
@@ -111,34 +114,195 @@ sha256sum file.exe
 
 ## 📌 SOC Insight
 
-Even if attackers rename malware:
-
-➡️ The hash remains the same
+Attackers can rename files —
+➡️ **Hashes remain consistent across systems**
 
 ---
 
-# 🌐 Hash Enrichment (Threat Intel)
+# 🌐 Hash Enrichment (Threat Intelligence)
 
-Once a hash is obtained, analysts enrich it using:
+After generating a hash, analysts enrich it using external intelligence sources.
+
+---
+
+## 🔍 Key Platforms
 
 * VirusTotal
 * MalwareBazaar
-* Internal threat intel
+* Hybrid Analysis
 
 ---
 
-## 🔍 Key Data from VirusTotal
+## 🔹 Information Gathered
 
-### 🔹 Detection Score
+* Detection score (AV engines)
+* Malware classification
+* Associated domains / IPs
+* Related samples
+* Behavioral summaries
 
-* Ratio of AV detections
-* High score → higher confidence malicious
+---
+
+## 📌 Example Use Case
+
+Hash lookup reveals:
+
+* Known malware family
+* Associated C2 infrastructure
+* Previous campaign activity
+
+➡️ Immediate context for investigation
 
 ---
 
-### 🔹 Threat Labels
+# 🧪 Sandbox Analysis
 
-* Malware family names
-* Classification (Trojan, stealer, etc.)
+Sandboxing allows safe execution of suspicious files.
 
 ---
+
+## 🔹 Goals
+
+* Observe runtime behavior
+* Identify malicious actions
+* Extract IOCs
+* Confirm intent
+
+---
+
+## 🔍 Behavioral Indicators
+
+* Process creation
+* Registry modifications
+* File drops
+* Network connections
+* Persistence mechanisms
+
+---
+
+## 📌 Key Insight
+
+Static analysis shows **what the file is**
+Sandboxing shows **what the file does**
+
+---
+
+# ⚠️ Sandbox Limitations
+
+* Malware may detect sandbox environments
+* Limited execution time
+* Encrypted traffic may hide activity
+* Fileless attacks may evade detection
+
+📌 SOC Rule:
+
+➡️ Never rely on a single source — always correlate.
+
+---
+
+# 🧬 MITRE ATT&CK Mapping
+
+Behavior observed in sandbox can be mapped to ATT&CK techniques.
+
+---
+
+## Example Techniques
+
+* Execution (T1059)
+* Persistence (T1547)
+* Command & Control (T1071)
+
+📌 Mapping behavior improves:
+
+* Detection rules
+* Threat hunting
+* Incident response
+
+---
+
+# 🔗 Full SOC Investigation Workflow
+
+This room reflects a real SOC process:
+
+---
+
+## 🛡️ Step-by-Step
+
+1. Detect suspicious file
+2. Analyze filename and location
+3. Generate hash
+4. Enrich hash using threat intel
+5. Analyze sandbox results
+6. Extract IOCs
+7. Map behavior to ATT&CK
+8. Decide → benign / suspicious / malicious
+
+---
+
+📌 Core Principle:
+
+➡️ **Collect → Enrich → Analyze → Decide**
+
+---
+
+# 🚨 Indicators of Compromise (IoCs)
+
+## File-Based
+
+* Suspicious filenames
+* Unknown hashes
+* Execution from temp directories
+
+---
+
+## Network-Based
+
+* Malicious domains
+* Suspicious IP connections
+
+---
+
+## Behavioral
+
+* PowerShell execution
+* Persistence mechanisms
+* Unexpected child processes
+* Outbound connections
+
+---
+
+# 🛡️ SOC Decision Making
+
+Final step in the process:
+
+* Benign → close alert
+* Suspicious → monitor / escalate
+* Malicious → incident response
+
+📌 Intelligence supports **decision-making, not just detection**.
+
+---
+
+# 🛠️ Tools & Technologies
+
+* `certutil`, `Get-FileHash`
+* `sha256sum`
+* VirusTotal
+* MalwareBazaar
+* Hybrid Analysis
+* Sandbox environments
+* MITRE ATT&CK
+
+---
+
+# 🧠 Key Takeaways
+
+* File analysis starts with simple heuristics
+* Hashing is essential for identification
+* Threat intel platforms provide critical context
+* Sandbox analysis reveals real behavior
+* Detection requires correlation of multiple data sources
+* SOC work is about making informed decisions
+
+---
+
