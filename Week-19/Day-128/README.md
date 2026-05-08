@@ -1,4 +1,4 @@
-# 📊 Alert Triage with Elastic — TryHackMe
+# 🛡️ Benign — TryHackMe
 
 ## 📅 Day 128 - 365 Days of Cybersecurity
 
@@ -8,235 +8,264 @@
 
 # 🧠 Overview
 
-In this room, I performed **alert triage using Elastic (ELK Stack)**, focusing on how SOC analysts investigate alerts and analyze logs within an Elastic-based SIEM environment.
+In this room, I performed a full **SOC/DFIR-style investigation** focused on identifying suspicious activity within a Windows environment.
 
-The lab simulated real-world workflows involving:
+The investigation involved:
 
-* Alert investigation
 * Log analysis
-* Event correlation
-* Decision-making in SOC environments
+* PowerShell investigation
+* Process correlation
+* Threat hunting techniques
+* Timeline reconstruction
 
 📌 Key Concept:
 
-SIEM tools may differ in interface —
-➡️ **but the investigation mindset remains the same.**
+Not all suspicious activity is immediately malicious —
+➡️ analysts must investigate deeply before reaching conclusions.
 
 ---
 
 # 🎯 Learning Objectives
 
-* Understand alert triage in Elastic
-* Investigate alerts using Kibana
-* Analyze logs and events
-* Correlate activity across multiple data sources
-* Classify alerts based on evidence
+* Investigate suspicious Windows activity
+* Analyze PowerShell execution
+* Correlate logs and process activity
+* Perform threat hunting techniques
+* Reconstruct attacker behavior through telemetry
 
 ---
 
-# 🧱 Elastic Stack (ELK)
+# 🔍 Investigation Scenario
 
-Elastic SIEM is built on:
+The room simulated a real-world SOC case where analysts needed to determine whether observed activity was:
 
-* **Elasticsearch** → data storage and indexing
-* **Logstash** → data ingestion and processing
-* **Kibana** → visualization and analysis
+* Benign
+* Suspicious
+* Malicious
+
+This required:
+
+* Reviewing logs
+* Investigating process execution
+* Correlating multiple artifacts
 
 ---
 
-## 🔹 Key Components Used
+# ⚙️ PowerShell Investigation
 
-* Discover (log search)
-* Dashboards
-* Alerts
-* Timeline view
+A major focus of the room was analyzing PowerShell activity.
+
+---
+
+## 🚨 Suspicious Indicators
+
+* Encoded commands
+* Obfuscated scripts
+* Unusual execution patterns
+* Network-related PowerShell activity
+
+---
+
+## Example Suspicious Command
+
+```powershell id="u7m3ra"
+powershell.exe -enc <base64_payload>
+```
 
 ---
 
 📌 SOC Insight:
 
-Elastic provides powerful **search + visualization + correlation capabilities**.
+PowerShell is one of the most abused Windows tools because it enables:
+
+* Remote execution
+* Automation
+* Fileless attacks
+* In-memory payload execution
 
 ---
 
-# 🔎 Alert Triage Process
+# 🔗 Process Correlation
+
+The investigation required analyzing process relationships.
 
 ---
 
-## 🛡️ Step-by-Step
+## Example Process Tree
 
-1. Review alert details
-2. Identify key indicators (IP, user, host, process)
-3. Search logs in Kibana
-4. Filter relevant events
-5. Analyze timeline
-6. Correlate related activity
-7. Classify alert
-
----
-
-📌 Core Principle:
-
-➡️ **Investigate → Correlate → Decide**
-
----
-
-# 🔍 Log Analysis in Kibana
-
----
-
-## 🔹 Key Fields Analyzed
-
-* `@timestamp`
-* `host.name`
-* `user.name`
-* `process.name`
-* `source.ip`
-* `destination.ip`
-
----
-
-## 🔹 Filtering Examples
-
-Search for specific user activity:
-
-```text id="h7k2xp"
-user.name: "admin"
+```text id="n4c8xt"
+explorer.exe
+ └── powershell.exe
 ```
 
----
+Additional suspicious chains may indicate:
 
-Search for PowerShell execution:
-
-```text id="c9p4rm"
-process.name: "powershell.exe"
-```
+* User execution
+* Script launch
+* Malware activity
 
 ---
 
-Search for specific IP:
-
-```text id="v5t1zs"
-source.ip: "192.168.1.10"
-```
+📌 Parent-child process analysis is critical for understanding attacker behavior.
 
 ---
 
-📌 Filtering allows narrowing down large datasets into relevant evidence.
+# 🧬 Threat Hunting Concepts
+
+This room introduced practical threat hunting techniques.
 
 ---
 
-# 🔗 Event Correlation
+## 🔹 Hunting Goals
+
+* Identify abnormal behavior
+* Detect suspicious execution patterns
+* Search for indicators across logs
 
 ---
 
-## Example Investigation
+## Example Hunting Areas
 
-* Alert triggered for suspicious activity
-* Logs show unusual login
-* Followed by process execution
-* Followed by network connection
-
-➡️ Indicates possible compromise
+* PowerShell logs
+* Process creation events
+* User activity
+* Network indicators
 
 ---
 
-📌 Key Skill:
-
-➡️ **Connecting multiple events into a single narrative**
+📌 Threat hunting focuses on proactively identifying malicious behavior.
 
 ---
 
-# 🚨 Detection Use Cases
+# 🌐 Network Activity Analysis
+
+Investigation included reviewing:
+
+* External connections
+* Suspicious IPs/domains
+* Potential command-and-control activity
 
 ---
 
-## 🔹 Authentication Events
+## Indicators Reviewed
 
-* Failed login attempts
-* Suspicious login times
-* Unusual locations
-
----
-
-## 🔹 Process Activity
-
-* PowerShell execution
-* Encoded commands
-* Unknown binaries
-
----
-
-## 🔹 Network Activity
-
-* Outbound connections
 * Rare destinations
-* Possible C2 communication
+* Unexpected outbound communication
+* Connections initiated by suspicious processes
 
 ---
 
-# 🧠 Triage Decision Making
+📌 Network telemetry often reveals attacker infrastructure.
 
 ---
 
-## 🔹 Classification
+# 🛠️ Log Analysis
 
-* ✅ True Positive → confirmed malicious activity
-* ⚠️ Suspicious → requires further investigation
-* ❌ False Positive → benign
+Logs analyzed included:
 
----
-
-## 🔹 Key Questions
-
-* Is the activity expected?
-* Is there malicious behavior?
-* Are multiple indicators present?
-* What is the risk level?
+* Process execution logs
+* PowerShell logs
+* Authentication events
+* System activity
 
 ---
 
-📌 Decision-making is the most important SOC skill.
+## Key Investigation Questions
+
+* What executed?
+* Who executed it?
+* When did it happen?
+* Was the activity expected?
 
 ---
 
-# 🛠️ Elastic Capabilities Used
+# 🔎 Timeline Reconstruction
 
-* Log search (Kibana Discover)
-* Filtering and querying
-* Timeline analysis
-* Event correlation
-* Alert investigation
+A major SOC skill practiced:
+
+➡️ Building a sequence of events
+
+---
+
+## Investigation Flow
+
+1. Identify suspicious activity
+2. Analyze PowerShell execution
+3. Correlate process activity
+4. Investigate network connections
+5. Reconstruct attacker timeline
+6. Determine impact
+
+---
+
+📌 Timeline reconstruction is essential in incident response.
 
 ---
 
 # 🚨 Indicators of Suspicious Activity
 
-* Multiple failed logins
-* Suspicious process execution
-* Unexpected user activity
-* Rare network connections
-* Anomalous behavior patterns
+## Process-Based
+
+* PowerShell execution
+* Encoded commands
+* Unusual child processes
+
+---
+
+## Network-Based
+
+* Connections to suspicious IPs
+* Rare outbound communication
+
+---
+
+## Behavioral
+
+* Obfuscation
+* Script execution anomalies
+* Suspicious execution context
+
+---
+
+# 🛡️ Detection Opportunities
+
+Potential detection logic:
+
+* Encoded PowerShell execution
+* PowerShell spawned from unusual parents
+* Suspicious outbound traffic
+* Rare process execution patterns
 
 ---
 
 # 🧪 Concepts Practiced
 
-* Alert triage workflow
-* Log analysis in Elastic
-* Event correlation
-* SOC investigation mindset
-* Decision-making process
+* Threat hunting
+* PowerShell analysis
+* Process tree investigation
+* Log correlation
+* Timeline reconstruction
+* SOC investigation methodology
+
+---
+
+# 🛠️ Tools & Technologies
+
+* Windows logs
+* PowerShell logging
+* SIEM-style analysis
+* Process investigation techniques
+* Threat hunting concepts
 
 ---
 
 # 🧠 Key Takeaways
 
-* Elastic is a powerful SIEM for log analysis
-* Triage methodology is tool-independent
-* Correlation is key to detecting attacks
-* Context determines alert classification
-* Efficient filtering is essential for investigation
+* PowerShell activity requires careful investigation
+* Correlation is essential for accurate conclusions
+* Threat hunting is proactive, not reactive
+* Timeline reconstruction helps reveal attacker behavior
+* Analysts must distinguish benign from malicious activity
 
 ---
 
