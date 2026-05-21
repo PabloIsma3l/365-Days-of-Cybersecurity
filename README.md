@@ -1,146 +1,67 @@
 # 🛡️ 365 Days of Cybersecurity
 
-A personal, hands-on journey through **365 days of cybersecurity learning**, focused on building strong defensive skills and progressing toward a role as a **SOC Analyst (Blue Team)**.
-
-This repository documents my **daily learning, practical labs, threat detection exercises, and investigations**, following structured learning paths such as **TryHackMe**, along with self-study and hands-on experimentation.
-
----
-
-## 🎯 Project Objective
-
-The main goals of this project are:
-
-* Build a **solid foundation in cybersecurity and defensive security**
-* Develop practical skills in **threat detection, log analysis, and incident investigation**
-* Document progress in a **clear, structured, and professional way**
-* Create a public portfolio that demonstrates **consistency, discipline, and real SOC skills**
-
-This project focuses on **understanding how attacks work and how to detect them**, not just theory.
+> ⚠️ **This challenge has been officially closed at Day 140.**
+> The journey continues in a new, more focused repository:
+> 👉 [SOC Analysis Journal](https://github.com/PabloIsma3l/SOC-Analysis-Journal) *(link updated once created)*
 
 ---
 
-## 🧠 Learning Path
+## What this repository represents
 
-The roadmap followed in this repository includes:
+A **140-day documented journey** through cybersecurity fundamentals,
+focused on Blue Team and SOC Analyst skills.
 
-* Networking fundamentals
-* Traffic analysis (**Wireshark, tcpdump**)
-* Log analysis (**Windows Event Logs, Sysmon**)
-* Web attack detection (SQLi, XSS, Web Shells, DDoS)
-* Threat detection on Windows systems
-* SIEM fundamentals and event correlation
-* Incident investigation mindset (SOC workflow)
-
-Most of the content is based on:
-
-* **TryHackMe – SOC Level 1 Path**
-* Linux and networking self-study
-* Hands-on labs and real-world scenarios
+This project demonstrated consistency, discipline, and progressive
+learning across the full **TryHackMe SOC Level 1 path**, from
+absolute fundamentals to alert triage, phishing analysis, SIEM
+basics, and cyber defence frameworks.
 
 ---
 
-## 🗂 Repository Structure
+## Why it closed at Day 140
 
-```text
-365-Days-of-Cybersecurity/
-├── week-01/
-├── week-02/
-├── week-03/
-│   ├── day-20-wireshark-basics/
-│   ├── day-21-tcpdump-basics/
-│   ├── day-22-nmap-basics/
-│   ├── day-23-cryptography-basics/
-│   └── README.md
-├── labs/
-│   ├── nmap-basic-lab/
-│   ├── web-attack-detection/
-│   └── windows-logging-analysis/
-└── README.md
-```
+After completing the SOC Level 1 path on TryHackMe, the decision
+was made to shift from guided learning to **real-world, unguided
+practice** — a necessary step to move from tutorial consumption
+to actual skill development.
 
-* Each **week** contains daily progress and summaries
-* Each **day** includes a dedicated `README.md`
-* The `labs/` directory includes **practical detection and analysis exercises**
+The next phase focuses on:
+- Hands-on alert analysis in real SOC environments
+- Unguided investigations and case documentation
+- Preparation for the **CompTIA Security+** certification
+
+---
+
+## 🧠 What was covered (Days 1–140)
+
+- Networking fundamentals
+- Traffic analysis (Wireshark, tcpdump)
+- Log analysis (Windows Event Logs, Sysmon)
+- Web attack detection (SQLi, XSS, Web Shells, DDoS)
+- SIEM fundamentals (Splunk / ELK)
+- Phishing analysis and email investigation
+- Cyber defence frameworks (MITRE ATT&CK, Kill Chain, Pyramid of Pain)
+- SOC workflows: alert triage, reporting, workbooks
 
 ---
 
 ## 🛠 Tools & Technologies
 
-Tools and technologies used throughout this project:
-
-* **Wireshark** → Network traffic analysis
-* **tcpdump** → Packet capture and inspection
-* **Nmap** → Network scanning and enumeration
-* **Sysmon** → Advanced Windows logging
-* **Windows Event Viewer** → Log analysis
-* **SIEM (Splunk / ELK)** → Log correlation and detection
-* **Linux (Kali / Ubuntu)**
-* **Git & GitHub**
-
-More tools will be added as the project progresses.
-
----
-
-## 🧪 Hands-on Practice
-
-Practical experience is a core part of this journey:
-
-* TryHackMe SOC and detection-focused rooms
-* Log analysis (Windows & web logs)
-* Detection of real-world attack patterns
-* Traffic analysis and investigation
-
-Each lab includes:
-
-* Objectives
-* Logs / data analyzed
-* Commands and techniques used
-* Key findings and takeaways
-
----
-
-## 📈 Progress Tracking
-
-* Learning is structured **day by day** and **week by week**
-* Weekly summaries include:
-
-  * Topics covered
-  * Detection techniques learned
-  * Tools used
-  * Key takeaways
-
-This helps reinforce knowledge and track continuous improvement.
-
----
-
-## 🛡️ SOC Focus
-
-This repository emphasizes:
-
-* **Threat detection over exploitation**
-* **Event correlation instead of isolated logs**
-* **Understanding attacker behavior**
-* **Real-world investigation mindset**
-
-📌 Key areas developed:
-
-* Web attack detection
-* Windows threat detection (Event Logs + Sysmon)
-* DDoS and Web Shell detection
-* Log analysis and IoC identification
+- **Wireshark** → Network traffic analysis  
+- **tcpdump** → Packet capture and inspection  
+- **Nmap** → Network scanning  
+- **Sysmon** → Advanced Windows logging  
+- **Splunk / ELK** → SIEM and log correlation  
+- **Linux (Kali / Ubuntu)**  
+- **Git & GitHub**
 
 ---
 
 ## ⚠️ Legal Disclaimer
 
-All activities documented in this repository are performed in:
-
-* Controlled lab environments
-* Platforms designed for learning (e.g., TryHackMe)
-* Systems I own or have explicit permission to test
-
-⚠️ **This content is for educational purposes only.**
-Any misuse of the information is strictly discouraged.
+All activities documented here were performed in controlled lab
+environments and platforms designed for learning (TryHackMe).
+This content is strictly for educational purposes.
 
 ---
 
@@ -148,11 +69,9 @@ Any misuse of the information is strictly discouraged.
 
 **Pablo Ismael**
 Cybersecurity Student | Aspiring SOC Analyst (Blue Team)
+📍 Salta, Argentina
 
 ---
 
-## 🚀 Final Note
-
-This project represents a commitment to **daily improvement, hands-on learning, and real-world skill development**.
-
-The goal is not only to learn cybersecurity, but to **become capable of detecting, analyzing, and responding to real threats in a SOC environment**.
+*140 days of consistency. The foundation is built.
+Now the real work begins.*
