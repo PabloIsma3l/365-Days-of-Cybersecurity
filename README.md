@@ -1,8 +1,6 @@
 # 🛡️ 365 Days of Cybersecurity
 
 > ⚠️ **This challenge has been officially closed at Day 140.**
-> The journey continues in a new, more focused repository:
-> 👉 [SOC Analysis Journal](https://github.com/PabloIsma3l/SOC-Analysis-Journal) *(link updated once created)*
 
 ---
 
